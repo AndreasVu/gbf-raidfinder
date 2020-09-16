@@ -1,0 +1,63 @@
+.grid-container {
+    width: 430px;
+    border-radius: 15px;
+    margin: 15px 0 0 15px;
+    background: #2F2F2F;
+    display: grid;
+    grid-template-columns: 430px;
+    grid-template-rows: 70px 450px 130px 65px;
+    gap: 0px 0px;
+    grid-template-areas:
+      "raid-title"
+      "code-container"
+      "copy"
+      "remove";
+  }
+  
+.raid-title {
+    grid-area: raid-title;
+    text-align: center;
+    line-height: 70px;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.code-container {
+    grid-area: code-container;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 68px;
+    gap: 6px 0;
+}
+
+.copy { 
+    grid-area: copy;
+    background: #BB86FC;
+    text-align: center;
+    
+    .button-text {
+        line-height: 130px;
+    }
+}
+
+.remove {
+    grid-area: remove;
+    background: #CF6679;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    line-height: 65px;
+
+    .button-text {
+        line-height: 65px;
+    }
+}
+
+.button-text {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
