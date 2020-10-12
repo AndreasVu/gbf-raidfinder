@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddRaidEntry } from 'src/models/add-raid-entry.model';
 import { Raid } from '../models/raid.model'
 
 @Component({
@@ -7,10 +8,16 @@ import { Raid } from '../models/raid.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  selectedRaids: Raid[] = [
-    new Raid('Lucilius', 123123),
-    new Raid('Lucilius', 123123),
-    new Raid('Lucilius', 123123),
-  ];
+  selectedRaids: Raid[] = [];
   title = 'raidfinder';
+
+  onRaidAdded(raid: AddRaidEntry) {
+    if (!this.selectedRaids.includes(raid)) {
+      this.selectedRaids.push(raid as Raid);
+    }
+  }
+
+  onRaidRemoved(raid: Raid) {
+    this.selectedRaids = this.selectedRaids.filter(obj => obj !== raid);
+  }
 }

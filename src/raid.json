@@ -1,1464 +1,907 @@
 [
 	{
-		"en": "Lvl 100 Spirit of Montague",
-		"jp": "Lv100 スピリット・オブ・モンタギュー",
-
-		"category": "Current Event",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 50 Spirit of Montague",
-		"jp": "Lv50 スピリット・オブ・モンタギュー",
-
-		"category": "Current Event",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 100 Xeno Ifrit",
-		"jp": "Lv100 ゼノ・イフリート",
-
-		"category": "Event",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 100 Xeno Vohu Manah",
-		"jp": "Lv100 ゼノ・ウォフマナフ",
-
-		"category": "Event",
-		"element": "Earth"
-	},
-	{
-		"en": "Lvl 30 Elder Vestige",
-		"jp": "Lv30 先史の遺像",
-
-		"category": "Event",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 50 Xolotl",
-		"jp": "Lv50 ショロトル",
-
-		"category": "Event",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 100 Xeno Sagittarius",
-		"jp": "Lv100 ゼノ・サジタリウス",
-
-		"category": "Event",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 30 Aberrant Tower",
-		"jp": "Lv30 異形の司令塔",
-
-		"category": "Event",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 50 Chaos Beast",
-		"jp": "Lv50 ケイオスビースト",
-
-		"category": "Event",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 30 Time Retrograde Army",
-		"jp": "Lv30 時間遡行軍",
-
-		"category": "Event",
-		"element": "None"
-	},
-	{
-		"en": "Lvl 50 Amatsumaula",
-		"jp": "Lv50 アマツマウラ",
-
-		"category": "Event",
-		"element": "None"
-	},
-	{
-		"en": "Lvl 30 Queen's Armor",
-		"jp": "Lv30 魔王の鎧",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 50 Sharom",
-		"jp": "Lv50 シャローム",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 30 The Watery",
-		"jp": "Lv30 『水』",
-
-		"category": "Event",
-		"element": "Water"
-	},
-	{
-		"en": "Lvl 50 The Thunder",
-		"jp": "Lv50 『雷』",
-
-		"category": "Event",
-		"element": "Light"
-	},
-	{
-		"en": "Lvl 60 Procris",
-		"jp": "Lv60 プロスクリスィ",
-
-		"category": "Event",
-		"element": "None"
-	},
-	{
-		"en": "Lvl 30 Phantom Fox",
-		"jp": "Lv30 九尾の幻影",
-
-		"category": "Event",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 50 Ninpress",
-		"jp": "Lv50 九尾",
-
-		"category": "Event",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 100 Xeno Cocytus",
-		"jp": "Lv100 ゼノ・コキュートス",
-
-		"category": "Event",
-		"element": "Water"
-	},
-	{
-		"en": "Lvl 100 Xeno Diablo",
-		"jp": "Lv100 ゼノ・ディアボロス",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 30 Dominion Core",
-		"jp": "Lv30 ドミニオンズ・コア",
-
-		"category": "Event",
-		"element": "Light"
-	},
-	{
-		"en": "Lvl 50 Sandalphon",
-		"jp": "Lv50 サンダルフォン",
-
-		"category": "Event",
-		"element": "Light"
-	},
-	{
-		"en": "Lvl 100 Sandalphon",
-		"jp": "Lv100 サンダルフォン",
-
-		"category": "Event",
-		"element": "Light"
-	},
-	{
-		"en": "Lvl 30 Belial",
-		"jp": "Lv30 ベリアル",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 50 Avatar",
-		"jp": "Lv50 アバター",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 100 Belial",
-		"jp": "Lv100 ベリアル",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 100 Xeno Corow",
-		"jp": "Lv100 ゼノ・コロゥ",
-
-		"category": "Event",
-		"element": "Light"
-	},
-	{
-		"en": "Lvl 30 Mecha Zogora",
-		"jp": "Lv30 覇壊機獣メカゾゴラ",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 50 Lord Daimon",
-		"jp": "Lv50 覇壊神ダイモン",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 30 Devastation Cannon",
-		"jp": "Lv30 自律駆動ガトリング砲",
-
-		"category": "Event",
-		"element": "Earth"
-	},
-	{
-		"en": "Lvl 50 Devastation Cannon",
-		"jp": "Lv50 自律駆動ガトリング砲",
-
-		"category": "Event",
-		"element": "Earth"
-	},
-	{
-		"en": "Lvl 30 Pisard",
-		"jp": "Lv30 ピーサード",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 50 Pisard",
-		"jp": "Lv50 ピーサード",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 60 Desperate Pisard",
-		"jp": "Lv60 捨て身のピーサード",
-
-		"category": "Event",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 30 Nagelwolf",
-		"jp": "Lv30 ナーゲルヴォルフ",
-
-		"category": "Event",
-		"element": "Earth"
-	},
-	{
-		"en": "Lvl 50 Bone Dragon",
-		"jp": "Lv50 ボーンドラゴン",
-
-		"category": "Event",
-		"element": "Earth"
-	},
-	{
 		"en": "Lvl 100 Tiamat Omega Ayr",
 		"jp": "Lv100 ティアマト・マグナ＝エア",
-
 		"category": "Impossible Omega",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 100 Colossus Omega",
 		"jp": "Lv100 コロッサス・マグナ",
-
 		"category": "Impossible Omega",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 100 Leviathan Omega",
 		"jp": "Lv100 リヴァイアサン・マグナ",
-
 		"category": "Impossible Omega",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 100 Yggdrasil Omega",
 		"jp": "Lv100 ユグドラシル・マグナ",
-
 		"category": "Impossible Omega",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 100 Luminiera Omega",
 		"jp": "Lv100 シュヴァリエ・マグナ",
-
 		"category": "Impossible Omega",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 100 Celeste Omega",
 		"jp": "Lv100 セレスト・マグナ",
-
 		"category": "Impossible Omega",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 120 Shiva",
 		"jp": "Lv120 シヴァ",
-
 		"category": "Impossible Omega II",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 120 Europa",
 		"jp": "Lv120 エウロペ",
-
 		"category": "Impossible Omega II",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 120 Godsworn Alexiel",
 		"jp": "Lv120 ゴッドガード・ブローディア",
-
 		"category": "Impossible Omega II",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 120 Grimnir",
 		"jp": "Lv120 グリームニル",
-
 		"category": "Impossible Omega II",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 120 Metatron",
 		"jp": "Lv120 メタトロン",
-
 		"category": "Impossible Omega II",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 120 Avatar",
 		"jp": "Lv120 アバター",
-
 		"category": "Impossible Omega II",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 250 Beelzebub",
 		"jp": "Lv250 ベルゼバブ",
-
-		"category": "Impossible ★8 Rapture",
+		"category": "Impossible",
 		"element": "None"
 	},
 	{
 		"en": "Lvl 120 Macula Marius",
 		"jp": "Lv120 マキュラ・マリウス",
-
 		"category": "Impossible Tier 1",
 		"element": "Water"
 	},
 	{
 		"jp": "Lv120 フラム＝グラス",
 		"en": "Lvl 120 Twin Elements",
-
 		"category": "Impossible Tier 1",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 120 Medusa",
 		"jp": "Lv120 メドゥーサ",
-
 		"category": "Impossible Tier 1",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 120 Nezha",
 		"jp": "Lv120 ナタク",
-
 		"category": "Impossible Tier 1",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 120 Apollo",
 		"jp": "Lv120 アポロン",
-
 		"category": "Impossible Tier 1",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 120 Dark Angel Olivia",
 		"jp": "Lv120 Dエンジェル・オリヴィエ",
-
 		"category": "Impossible Tier 1",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 110 Rose Queen",
 		"jp": "Lv110 ローズクイーン",
-
 		"category": "Impossible Tier 1",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 120 Prometheus",
 		"jp": "Lv120 プロメテウス",
-
 		"category": "Impossible Tier 3",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 120 Ca Ong",
 		"jp": "Lv120 カー・オン",
-
 		"category": "Impossible Tier 3",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 120 Gilgamesh",
 		"jp": "Lv120 ギルガメッシュ",
-
 		"category": "Impossible Tier 3",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 120 Morrigna",
 		"jp": "Lv120 バイヴカハ",
-
 		"category": "Impossible Tier 3",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 120 Hector",
 		"jp": "Lv120 ヘクトル",
-
 		"category": "Impossible Tier 3",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 120 Anubis",
 		"jp": "Lv120 アヌビス",
-
 		"category": "Impossible Tier 3",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 200 Ultimate Bahamut",
 		"jp": "Lv200 アルティメットバハムート",
-
-		"category": "Impossible Ultimate",
+		"category": "Impossible",
 		"element": "None"
 	},
 	{
 		"en": "Lvl 150 Tiamat Malice",
 		"jp": "Lv150 ティアマト・マリス",
-
-		"category": "Impossible ★5 Nightmare",
+		"category": "Impossible",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 150 Lucilius",
 		"jp": "Lv150 ルシファー",
-
-		"category": "Impossible ★5 Nightmare",
+		"category": "Impossible",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 150 Phronesis",
 		"jp": "Lv150 フロネシス",
-
-		"category": "Impossible ★5 Nightmare",
+		"category": "Impossible",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 200 Lindwurm",
 		"jp": "Lv200 リンドヴルム",
-
-		"category": "Impossible ★5 Nightmare",
+		"category": "Impossible",
 		"element": "None"
 	},
 	{
 		"en": "Lvl 150 Leviathan Malice",
 		"jp": "Lv150 リヴァイアサン・マリス",
-
-		"category": "Impossible ★5 Nightmare",
+		"category": "Impossible",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 200 Grand Order",
 		"jp": "Lv200 ジ・オーダー・グランデ",
-
-		"category": "Impossible ★6 Nightmare",
+		"category": "Impossible",
 		"element": "Light"
 	},
 	{
 		"jp": "Lv150 プロトバハムート",
 		"en": "Lvl 150 Proto Bahamut",
-
-		"category": "Impossible ★6 Nightmare",
+		"category": "Impossible",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 200 Akasha",
 		"jp": "Lv200 アーカーシャ",
-
-		"category": "Impossible ★6 Nightmare",
+		"category": "Impossible",
 		"element": "Light"
 	},
 	{
 		"en": "The Four Primarchs",
 		"jp": "四大天司ＨＬ",
-
-		"category": "Impossible ★6 Nightmare",
+		"category": "Impossible",
 		"element": "None"
 	},
 	{
 		"en": "Lvl 200 Wilnas",
 		"jp": "Lv200 ウィルナス",
-
-		"category": "Impossible ★7 Dragon, Ult. Bahamut",
+		"category": "Impossible",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 200 Wamdus",
 		"jp": "Lv200 ワムデュス",
-
-		"category": "Impossible ★7 Dragon, Ult. Bahamut",
+		"category": "Impossible",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 200 Galleon",
 		"jp": "Lv200 ガレヲン",
-
-		"category": "Impossible ★7 Dragon, Ult. Bahamut",
+		"category": "Impossible",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 200 Ewiyar",
 		"jp": "Lv200 イーウィヤ",
-
-		"category": "Impossible ★7 Dragon, Ult. Bahamut",
+		"category": "Impossible",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 200 Lu Woh",
 		"jp": "Lv200 ル・オー",
-
-		"category": "Impossible ★7 Dragon, Ult. Bahamut",
+		"category": "Impossible",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 200 Fediel",
 		"jp": "Lv200 フェディエル",
-
-		"category": "Impossible ★7 Dragon, Ult. Bahamut",
+		"category": "Impossible",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 150 Ultimate Bahamut",
 		"jp": "Lv150 アルティメットバハムート",
-
-		"category": "Impossible ★7 Dragon, Ult. Bahamut",
+		"category": "Impossible",
 		"element": "None"
-	},
-	{
-		"en": "Lvl 20 Griffin",
-		"jp": "Lv20 グリフォン",
-
-		"category": "Low Level",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 30 Griffin",
-		"jp": "Lv30 グリフォン",
-
-		"category": "Low Level",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 20 Zarchnal Flame",
-		"jp": "Lv20 ザリチュナルフレイム",
-
-		"category": "Low Level",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 30 Zarchnal Flame",
-		"jp": "Lv30 ザリチュナルフレイム",
-
-		"category": "Low Level",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 20 Imperial Guard",
-		"jp": "Lv20 インペリアルガード",
-
-		"category": "Low Level",
-		"element": "Water"
-	},
-	{
-		"en": "Lvl 30 Imperial Guard",
-		"jp": "Lv30 インペリアルガード",
-
-		"category": "Low Level",
-		"element": "Water"
-	},
-	{
-		"en": "Lvl 30 Will-o'-Wisp",
-		"jp": "Lv30 ウィル･オ･ウィスプ",
-
-		"category": "Low Level",
-		"element": "Light"
-	},
-	{
-		"en": "Lvl 30 Ancient Dragon",
-		"jp": "Lv30 エンシェントドラゴン",
-
-		"category": "Low Level",
-		"element": "Earth"
-	},
-	{
-		"en": "Lvl 30 Evil Eye",
-		"jp": "Lv30 イービルアイ",
-
-		"category": "Low Level",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 30 Tiamat",
-		"jp": "Lv30 ティアマト",
-
-		"category": "Low Level",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 50 Tiamat",
-		"jp": "Lv50 ティアマト",
-
-		"category": "Low Level",
-		"element": "Wind"
-	},
-	{
-		"en": "Lvl 30 Colossus",
-		"jp": "Lv30 コロッサス",
-
-		"category": "Low Level",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 50 Colossus",
-		"jp": "Lv50 コロッサス",
-
-		"category": "Low Level",
-		"element": "Fire"
-	},
-	{
-		"en": "Lvl 30 Leviathan",
-		"jp": "Lv30 リヴァイアサン",
-
-		"category": "Low Level",
-		"element": "Water"
-	},
-	{
-		"en": "Lvl 50 Leviathan",
-		"jp": "Lv50 リヴァイアサン",
-
-		"category": "Low Level",
-		"element": "Water"
-	},
-	{
-		"en": "Lvl 30 Yggdrasil",
-		"jp": "Lv30 ユグドラシル",
-
-		"category": "Low Level",
-		"element": "Earth"
-	},
-	{
-		"en": "Lvl 50 Yggdrasil",
-		"jp": "Lv50 ユグドラシル",
-
-		"category": "Low Level",
-		"element": "Earth"
-	},
-	{
-		"en": "Lvl 30 Adversa",
-		"jp": "Lv30 アドウェルサ",
-
-		"category": "Low Level",
-		"element": "Light"
-	},
-	{
-		"en": "Lvl 50 Adversa",
-		"jp": "Lv50 アドウェルサ",
-
-		"category": "Low Level",
-		"element": "Light"
-	},
-	{
-		"en": "Lvl 30 Celeste",
-		"jp": "Lv30 セレスト",
-
-		"category": "Low Level",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 50 Celeste",
-		"jp": "Lv50 セレスト",
-
-		"category": "Low Level",
-		"element": "Dark"
-	},
-	{
-		"en": "Lvl 60 Celeste",
-		"jp": "Lv60 セレスト",
-
-		"category": "Low Level",
-		"element": "Dark"
 	},
 	{
 		"jp": "Lv100 プロトバハムート",
 		"en": "Lvl 100 Proto Bahamut",
-
 		"category": "Nightmare",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 100 Grand Order",
 		"jp": "Lv100 ジ・オーダー・グランデ",
-
 		"category": "Nightmare",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 75 Celeste Omega",
 		"jp": "Lv75 セレスト・マグナ",
-
 		"category": "Omega",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 75 Luminiera Omega",
 		"jp": "Lv75 シュヴァリエ・マグナ",
-
 		"category": "Omega",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 60 Yggdrasil Omega",
 		"jp": "Lv60 ユグドラシル・マグナ",
-
 		"category": "Omega",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 60 Leviathan Omega",
 		"jp": "Lv60 リヴァイアサン・マグナ",
-
 		"category": "Omega",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 70 Colossus Omega",
 		"jp": "Lv70 コロッサス・マグナ",
-
 		"category": "Omega",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 50 Tiamat Omega",
 		"jp": "Lv50 ティアマト・マグナ",
-
 		"category": "Omega",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 60 Tiamat Omega",
 		"jp": "Lv60 ティアマト・マグナ",
-
 		"category": "Omega",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 80 Colossus Omega",
 		"jp": "Lv80 コロッサス・マグナ",
-
 		"category": "Omega",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 70 Leviathan Omega",
 		"jp": "Lv70 リヴァイアサン・マグナ",
-
 		"category": "Omega",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 70 Yggdrasil Omega",
 		"jp": "Lv70 ユグドラシル・マグナ",
-
 		"category": "Omega",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 85 Luminiera Omega",
 		"jp": "Lv85 シュヴァリエ・マグナ",
-
 		"category": "Omega",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 85 Celeste Omega",
 		"jp": "Lv85 セレスト・マグナ",
-
 		"category": "Omega",
 		"element": "Dark"
 	},
 	{
 		"jp": "Lv100 ミカエル",
 		"en": "Lvl 100 Michael",
-
 		"category": "Primarch",
 		"element": "Fire"
 	},
 	{
 		"jp": "Lv100 ガブリエル",
 		"en": "Lvl 100 Gabriel",
-
 		"category": "Primarch",
 		"element": "Water"
 	},
 	{
 		"jp": "Lv100 ウリエル",
 		"en": "Lvl 100 Uriel",
-
 		"category": "Primarch",
 		"element": "Earth"
 	},
 	{
 		"jp": "Lv100 ラファエル",
 		"en": "Lvl 100 Raphael",
-
 		"category": "Primarch",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 250 Lucilius",
 		"jp": "Lv250 ルシファー",
-
-		"category": "Impossible ★8 Rapture",
+		"category": "Impossible",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 100 Shenxian",
 		"jp": "Lv100 四象瑞神",
-
 		"category": "Rise of the Beasts",
 		"element": "None"
 	},
 	{
 		"en": "Lvl 100 Huanglong",
 		"jp": "Lv100 黄龍",
-
 		"category": "Rise of the Beasts",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 100 Qilin",
 		"jp": "Lv100 黒麒麟",
-
 		"category": "Rise of the Beasts",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 60 Zhuque",
 		"jp": "Lv60 朱雀",
-
 		"category": "Rise of the Beasts",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 60 Xuanwu",
 		"jp": "Lv60 玄武",
-
 		"category": "Rise of the Beasts",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 60 Baihu",
 		"jp": "Lv60 白虎",
-
 		"category": "Rise of the Beasts",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 60 Qinglong",
 		"jp": "Lv60 青竜",
-
 		"category": "Rise of the Beasts",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 90 Agni",
 		"jp": "Lv90 アグニス",
-
 		"category": "Rise of the Beasts",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 90 Neptune",
 		"jp": "Lv90 ネプチューン",
-
 		"category": "Rise of the Beasts",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 90 Titan",
 		"jp": "Lv90 ティターン",
-
 		"category": "Rise of the Beasts",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 90 Zephyrus",
 		"jp": "Lv90 ゼピュロス",
-
 		"category": "Rise of the Beasts",
 		"element": "Wind"
 	},
 	{
 		"en": "Huanglong & Qilin (Impossible)",
 		"jp": "黄龍・黒麒麟HL",
-
 		"category": "Rise of the Beasts",
 		"element": "None"
 	},
 	{
 		"en": "Lvl 100 Macula Marius",
 		"jp": "Lv100 マキュラ・マリウス",
-
 		"category": "Tier 1",
 		"element": "Water"
 	},
 	{
 		"jp": "Lv100 フラム＝グラス",
 		"en": "Lvl 100 Twin Elements",
-
 		"category": "Tier 1",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 100 Medusa",
 		"jp": "Lv100 メドゥーサ",
-
 		"category": "Tier 1",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 100 Nezha",
 		"jp": "Lv100 ナタク",
-
 		"category": "Tier 1",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 100 Apollo",
 		"jp": "Lv100 アポロン",
-
 		"category": "Tier 1",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 100 Dark Angel Olivia",
 		"jp": "Lv100 Dエンジェル・オリヴィエ",
-
 		"category": "Tier 1",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 100 Athena",
 		"jp": "Lv100 アテナ",
-
 		"category": "Tier 2",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 100 Odin",
 		"jp": "Lv100 オーディン",
-
 		"category": "Tier 2",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 100 Grani",
 		"jp": "Lv100 グラニ",
-
 		"category": "Tier 2",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 100 Garuda",
 		"jp": "Lv100 ガルーダ",
-
 		"category": "Tier 2",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 100 Lich",
 		"jp": "Lv100 リッチ",
-
 		"category": "Tier 2",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 100 Baal",
 		"jp": "Lv100 バアル",
-
 		"category": "Tier 2",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 30 Cyaegha",
 		"jp": "Lv30 シアエガ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 40 Cyaegha",
 		"jp": "Lv40 シアエガ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 30 Dimorphodon",
 		"jp": "Lv30 ディモルフォドン",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 40 Dimorphodon",
 		"jp": "Lv40 ディモルフォドン",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 50 Audumbla",
 		"jp": "Lv50 アウズンブラ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 60 Audumbla",
 		"jp": "Lv60 アウズンブラ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 75 Aberration",
 		"jp": "Lv75 ビザールビースト",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 50 Allosaurus",
 		"jp": "Lv50 アロザロウス",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 60 Allosaurus",
 		"jp": "Lv60 アロザロウス",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 75 Tyrannus",
 		"jp": "Lv75 ティラノス",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 90 Oktopode",
 		"jp": "Lv90 オクトポーデ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 95 Oktopode",
 		"jp": "Lv95 オクトポーデ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 100 Oktopode",
 		"jp": "Lv100 オクトポーデ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 90 Piasa",
 		"jp": "Lv90 パイア・ソー",
-
 		"category": "Unite and Fight",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 95 Piasa",
 		"jp": "Lv95 パイア・ソー",
-
 		"category": "Unite and Fight",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 100 Piasa",
 		"jp": "Lv100 パイア・ソー",
-
 		"category": "Unite and Fight",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 30 Ahura",
 		"jp": "Lv30 アーフラー",
-
 		"category": "Unite and Fight",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 40 Ahura",
 		"jp": "Lv40 アーフラー",
-
 		"category": "Unite and Fight",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 50 Grendel",
 		"jp": "Lv50 ベオウルフ",
-
 		"category": "Unite and Fight",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 60 Grendel",
 		"jp": "Lv60 ベオウルフ",
-
 		"category": "Unite and Fight",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 75 Vulcanrio",
 		"jp": "Lv75 ヴァルカンライオ",
-
 		"category": "Unite and Fight",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 90 Sethlans",
 		"jp": "Lv90 セスランス",
-
 		"category": "Unite and Fight",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 95 Sethlans",
 		"jp": "Lv95 セスランス",
-
 		"category": "Unite and Fight",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 100 Sethlans",
 		"jp": "Lv100 セスランス",
-
 		"category": "Unite and Fight",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 30 Ogler",
 		"jp": "Lv30 ゲイザー",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 40 Ogler",
 		"jp": "Lv40 ゲイザー",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 50 Gugalanna",
 		"jp": "Lv50 グガランナ",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 60 Gugalanna",
 		"jp": "Lv60 グガランナ",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 75 Viridian Horn",
 		"jp": "Lv75 エメラルドホーン",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 90 Quetzalcoatl",
 		"jp": "Lv90 ケツァルコアトル",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 95 Quetzalcoatl",
 		"jp": "Lv95 ケツァルコアトル",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 100 Quetzalcoatl",
 		"jp": "Lv100 ケツァルコアトル",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 50 Cocoa Creepy",
 		"jp": "Lv50 チョコポーチ",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 60 Cocoa Creepy",
 		"jp": "Lv60 チョコポーチ",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 75 Chocolate Fantastica",
 		"jp": "Lv75　チョコレートメルヘン",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 90 Fudgey Filly",
 		"jp": "Lv90 ボンボン・ポニー",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 95 Fudgey Filly",
 		"jp": "Lv95 ボンボン・ポニー",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 100 Fudgey Filly",
 		"jp": "Lv100 ボンボン・ポニー",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 30 Ahriman",
 		"jp": "Lv30 アーリマン",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 40 Ahriman",
 		"jp": "Lv40 アーリマン",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 75 Wicked Rebel",
 		"jp": "Lv75 ウィケッドレブル",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 90 Typhon",
 		"jp": "Lv90 テュポーン",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 95 Typhon",
 		"jp": "Lv95 テュポーン",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 100 Typhon",
 		"jp": "Lv100 テュポーン",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 90 Snow White",
 		"jp": "Lv90 スノウホワイト",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 95 Snow White",
 		"jp": "Lv95 スノウホワイト",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 100 Snow White",
 		"jp": "Lv100 スノウホワイト",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 90 Freyr",
 		"jp": "Lv90 フレイ",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 95 Freyr",
 		"jp": "Lv95 フレイ",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 100 Freyr",
 		"jp": "Lv100 フレイ",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 50 Mahisha",
 		"jp": "Lv50 マヒシャ",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 60 Mahisha",
 		"jp": "Lv60 マヒシャ",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 75 Supergigante",
 		"jp": "Lv75 スーペルヒガンテ",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 90 Vortex Dragon",
 		"jp": "Lv90 雷霆公",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 95 Vortex Dragon",
 		"jp": "Lv95 雷霆公",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 100 Vortex Dragon",
 		"jp": "Lv100 雷霆公",
-
 		"category": "Unite and Fight",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 90 Tsukuyomi",
 		"jp": "Lv90 ツクヨミ",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 95 Tsukuyomi",
 		"jp": "Lv95 ツクヨミ",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 100 Tsukuyomi",
 		"jp": "Lv100 ツクヨミ",
-
 		"category": "Unite and Fight",
 		"element": "Dark"
 	},
 	{
 		"en": "Lvl 90 Varuna",
 		"jp": "Lv90 ツクヨミ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 95 Varuna",
 		"jp": "Lv95 ツクヨミ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 100 Varuna",
 		"jp": "Lv100 ツクヨミ",
-
 		"category": "Unite and Fight",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 90 Garula, Shining Hawk",
 		"jp": "Lv90 シャインホーク・ガルラ",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 95 Garula, Shining Hawk",
 		"jp": "Lv95 シャインホーク・ガルラ",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 100 Garula, Shining Hawk",
 		"jp": "Lv100 シャインホーク・ガルラ",
-
 		"category": "Unite and Fight",
 		"element": "Wind"
 	}

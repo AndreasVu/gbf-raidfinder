@@ -42,6 +42,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import {ClipboardModule} from '@angular/cdk/clipboard';
 import { AddRaidDialogComponent } from './add-button/add-raid-dialog/add-raid-dialog.component';
 
 
@@ -96,6 +97,7 @@ import { AddRaidDialogComponent } from './add-button/add-raid-dialog/add-raid-di
     MatTooltipModule,
     MatTreeModule,
     OverlayModule,
+    ClipboardModule
   ],
   entryComponents: [
     RaidListComponent

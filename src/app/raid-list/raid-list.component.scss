@@ -1,10 +1,10 @@
 .grid-container {
-    width: 430px;
+    width: 350px;
     border-radius: 15px;
     margin: 15px 0 0 15px;
     background: #2F2F2F;
     display: grid;
-    grid-template-columns: 430px;
+    grid-template-columns: 350px;
     grid-template-rows: 70px 450px 130px 65px;
     gap: 0px 0px;
     grid-template-areas:
@@ -12,8 +12,8 @@
       "code-container"
       "copy"
       "remove";
-  }
-  
+}
+
 .raid-title {
     grid-area: raid-title;
     text-align: center;

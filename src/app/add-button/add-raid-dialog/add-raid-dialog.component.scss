@@ -1,0 +1,38 @@
+li {
+    font-size: medium;
+    margin: 10px;
+    list-style-type: none;
+}
+
+li > button {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.Earth {
+    border-color: brown;
+}
+
+.Wind {
+    border-color: green;
+}
+
+.Water {
+    border-color: blue;
+}
+
+.Fire {
+    border-color: red;
+}
+
+.None {
+    border-color: white;
+}
+
+.Dark {
+    border-color: black;
+}
+
+.Light {
+    border-color: yellow;
+}

@@ -1,6 +1,20 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<h1>{{titleBruh}}</h1>
+<h1 mat-dialog-title>Select raid</h1>
+<div mat-dialog-content>
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let category of categories">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ category }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul>
+                <li *ngFor="let raid of raidMap.get(category)">
+                    <button mat-button [mat-dialog-close]="raid" class="{{raid.element}}">{{ raid.en }}</button>
+                </li>
+            </ul>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
 <div mat-dialog-actions>
   <button mat-button color="accent" mat-dialog-close>Close</button>
 </div>

@@ -17,7 +17,7 @@
 </div> -->
 
 <div class="grid-container">
-    <h1 class="raid-title">Lvl 250 Lucilius</h1>
+    <h1 class="raid-title">{{ raid.en }}</h1>
     <div class="code-container">
         <app-raid-element></app-raid-element>
         <app-raid-element></app-raid-element>
@@ -26,12 +26,12 @@
         <app-raid-element></app-raid-element>
         <app-raid-element></app-raid-element>        
     </div>
-    <div class="copy" matRipple>
+    <div class="copy" matRipple [cdkCopyToClipboard]="onCopyCode()">
         <h2 class="button-text">
             Copy latest
         </h2>
     </div>
-    <div class="remove" matRipple>
+    <div class="remove" matRipple (click)="onRemoved()">
         <h2 class="button-text">
             Remove
         </h2>

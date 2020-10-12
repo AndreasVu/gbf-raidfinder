@@ -1,4 +1,8 @@
 <div class="grid-container">
-  <app-raid-list *ngFor="let raid of selectedRaids"></app-raid-list>
+  <app-raid-list 
+  *ngFor="let raid of selectedRaids"
+  [raid]="raid"
+  (raidRemoved)="onRaidRemoved($event)"
+  ></app-raid-list>
 </div>
-<app-add-button></app-add-button>
+<app-add-button (raidSelected)="onRaidAdded($event)"></app-add-button>

@@ -1,3 +1,5 @@
-export class RaidCode {
-    constructor(time: number, ID: string) {}
+export interface RaidCode {
+    time: number,
+    ID: string,
+    used: boolean
 }
