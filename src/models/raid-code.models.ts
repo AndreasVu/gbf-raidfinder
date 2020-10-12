@@ -1,5 +1,6 @@
-export interface RaidCode {
-    time: number,
-    ID: string,
-    used: boolean
+export class RaidCode {
+    constructor(
+        public time: Date, 
+        public ID: string, 
+        public usedCode: boolean) {};
 }

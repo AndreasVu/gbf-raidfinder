@@ -1,30 +1,10 @@
-<!-- <div class="row">
-    <h1 class="raid-title">Lvl 250 Lucilius</h1>
-    <hr>
-    <div class="raid-codes">
-
-    </div>
-    <div class="copy" matRipple>
-        <h3 class="button-text">
-            Copy latest
-        </h3>
-    </div>
-    <div class="delete" matRipple>
-        <h3 class="button-text">
-            Remove
-        </h3>
-    </div>
-</div> -->
-
 <div class="grid-container">
     <h1 class="raid-title">{{ raid.en }}</h1>
     <div class="code-container">
-        <app-raid-element></app-raid-element>
-        <app-raid-element></app-raid-element>
-        <app-raid-element></app-raid-element>
-        <app-raid-element></app-raid-element>
-        <app-raid-element></app-raid-element>
-        <app-raid-element></app-raid-element>        
+        <app-raid-element
+            *ngFor="let code of raidCodes"
+            [element]="code"
+        ></app-raid-element>  
     </div>
     <div class="copy" matRipple [cdkCopyToClipboard]="onCopyCode()">
         <h2 class="button-text">

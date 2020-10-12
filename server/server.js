@@ -8,6 +8,9 @@ var keywords = ":Battle ID, :参戦ID";
 var raid_buffer = [];
 var stream = api_client.stream('statuses/filter', {track: keywords});
 
+app.use(require('cors')());
+app.use(require('body-parser').json());
+
 stream.on('tweet', function (tweet) {
     raid_buffer.push({
         ID: get_raid_id(tweet), 

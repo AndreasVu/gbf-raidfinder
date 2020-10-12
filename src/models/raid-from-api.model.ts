@@ -1,7 +1,7 @@
 import { Time } from "@angular/common";
 
 export interface RaidFromAPI {
-    ID: number,
+    ID: string,
     raidName: string,
-    time: Time
+    time: Date
 }
