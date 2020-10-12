@@ -44,6 +44,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { AddRaidDialogComponent } from './add-button/add-raid-dialog/add-raid-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { AddRaidDialogComponent } from './add-button/add-raid-dialog/add-raid-di
     MatTooltipModule,
     MatTreeModule,
     OverlayModule,
-    ClipboardModule
+    ClipboardModule,
+    HttpClientModule
   ],
   entryComponents: [
     RaidListComponent

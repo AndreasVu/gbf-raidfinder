@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AddRaidEntry } from 'src/models/add-raid-entry.model';
 import { Raid } from '../models/raid.model'
+import { ApihandlerService } from './apihandler.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,10 @@ import { Raid } from '../models/raid.model'
 export class AppComponent {
   selectedRaids: Raid[] = [];
   title = 'raidfinder';
+
+  constructor(api: ApihandlerService) {
+
+  }
 
   onRaidAdded(raid: AddRaidEntry) {
     if (!this.selectedRaids.includes(raid)) {
