@@ -13,7 +13,7 @@ export class ApihandlerService {
   mappedRaids = new Map<string, RaidCode[]>();
 
   constructor(private http: HttpClient) {
-    let getTimerID = setInterval(() => this.getAndSortTweets(), 50);
+    let getTimerID = setInterval(() => this.getAndSortTweets(), 100);
   }
 
   addToMap(raid: RaidFromAPI, raidNameEN: string) {

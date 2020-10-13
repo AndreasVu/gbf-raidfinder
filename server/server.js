@@ -8,19 +8,12 @@ const api_client = new Twitter(settings);
 app.use(require('cors')());
 app.use(require('body-parser').json());
 
-let keywords = "";
 let raid_buffer = [];
 let all_codes = [];
 let timerID = setInterval(() => all_codes = [], 60000);
-// Adds every raid from the raidlist to the twitter stream filter.
-for (let i = 0; i < raids.length; i++) {
-	keywords += raids[i].en + "," + raids[i].jp;
-	if (i != raids.length - 1) {
-		keywords += ',';
-	}
-}
 // Creates a new streaming instance
-let stream = api_client.stream('statuses/filter', {track: keywords});
+let stream = api_client.stream('statuses/filter', {track: get_keyword_string()});
+
 
 // Adds tweets found to buffer if it is valid
 stream.on('tweet', function (tweet) {
@@ -90,6 +83,19 @@ function isValid(tweet) {
             return true;
         } 
     }
+}
+
+// Adds every raid from the raidlist to the twitter stream filter.
+function get_keyword_string() {
+    let keywords = "";
+    for (let i = 0; i < raids.length; i++) {
+        keywords += raids[i].en + "," + raids[i].jp;
+        if (i != raids.length - 1) {
+            keywords += ',';
+        }
+    }
+    
+    return keywords;
 }
 
 // Endpoint used to get all the raids
