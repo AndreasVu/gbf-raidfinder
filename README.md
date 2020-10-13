@@ -1,6 +1,6 @@
 # Raidfinder
 
-This is my attempt at creating a simple raidfinder for Granblue Fantasy using Angular and node.
+This is my attempt at creating a simple raidfinder for Granblue Fantasy using Angular and Node.js.
 
 This project is far from finished, and need a lot ot polishing and tweaks.
 
@@ -9,9 +9,12 @@ This project is far from finished, and need a lot ot polishing and tweaks.
 ![](https://i.imgur.com/8aeJzwU.png)
 
 ## Development server
+Running the app:
+1. Download [node](https://nodejs.org/en/)
+2. Install the angular CLI with the command `npm install -g @angular/cli`
+3. Run `npm install` in the root folder, and the `/server` folder
+3. Run `ng serve` in the root folder, and `npm start` in the `/server folder`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-Run `npm start` inside the `/server` folder to run the server.
 
 ## Build
 
