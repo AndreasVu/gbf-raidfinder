@@ -14,7 +14,7 @@ Running the app:
 2. Install the angular CLI with the command `npm install -g @angular/cli`
 3. Run `npm install` in the root folder, and the `/server` folder
 4. Add your Twitter API keys and tokens in the `/server/settings.json` file
-5. Run `ng serve` in the root folder, and `npm start` in the `/server folder`
+5. Run `ng serve` in the root folder, and `npm start` in the `/server` folder
 
 
 ## Build
