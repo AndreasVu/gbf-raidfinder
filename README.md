@@ -4,6 +4,10 @@ This is my attempt at creating a simple raidfinder for Granblue Fantasy using An
 
 This project is far from finished, and need a lot ot polishing and tweaks.
 
+## Screenshots
+![](https://i.imgur.com/ya0iFV7.png)
+![](https://i.imgur.com/8aeJzwU.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
