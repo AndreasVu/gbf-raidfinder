@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AddRaidEntry } from 'src/models/add-raid-entry.model';
 import { Raid } from '../models/raid.model'
-import { ApihandlerService } from './apihandler.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,7 @@ export class AppComponent {
   selectedRaids: Raid[] = [];
   title = 'raidfinder';
 
-  constructor(api: ApihandlerService) {
+  constructor() {
 
   }
 

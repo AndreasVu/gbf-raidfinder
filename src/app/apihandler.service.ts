@@ -1,58 +1,64 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RaidFromAPI } from '../models/raid-from-api.model';
-import categories from '../categories.json'
 import raids from '../raid.json'
 import { RaidCode } from 'src/models/raid-code.models';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApihandlerService {
-  api_url = 'http://localhost:3000';
+  api_url = 'http://localhost:3000/get_raids';
   mappedRaids = new Map<string, RaidCode[]>();
 
   constructor(private http: HttpClient) {
-    let timerID = setInterval(() => this.getAndSortTweets(), 500);
+    let getTimerID = setInterval(() => this.getAndSortTweets(), 50);
+  }
+
+  addToMap(raid: RaidFromAPI, raidNameEN: string) {
+    let raidMap = this.mappedRaids.get(raidNameEN);
+    let newRaidCode = new RaidCode(raid.time, raid.ID, false);
+
+    if (raidMap != null) {
+      if (raidMap.length >= 6) {
+        raidMap = raidMap.slice(0, 5);
+      } 
+      raidMap.unshift(newRaidCode);
+      this.mappedRaids.set(raidNameEN, raidMap);
+    } else {
+      this.mappedRaids.set(raidNameEN, [newRaidCode]);
+    }
+  }
+
+  sortRaid(raidToBeSorted: RaidFromAPI) {
+    raids.forEach(raid => {
+      if (raid.jp == raidToBeSorted.raidName || raid.en == raidToBeSorted.raidName) {
+        this.addToMap(raidToBeSorted, raid.en);
+      }
+    })
   }
 
   getAndSortTweets() {
     try {
-      this.http.get<RaidFromAPI[]>('http://localhost:3000/get_raids').toPromise().then(
+      this.http.get<RaidFromAPI[]>(this.api_url).subscribe(
         (newRaids) => {
-          newRaids.forEach(newRaid => {
-            raids.forEach(raid => {
-              if (newRaid.raidName == raid.en) {
-                if (this.mappedRaids.get(raid.en) == null) {
-                  this.mappedRaids.set(raid.en, [new RaidCode(
-                    newRaid.time,
-                    newRaid.ID,
-                    false
-                  )]);
-                } else {
-                  let prevArray = this.mappedRaids.get(raid.en);
-                  if (prevArray.length > 6) {
-                    prevArray.pop();
-                  }
-                  prevArray.unshift(new RaidCode(
-                    newRaid.time,
-                    newRaid.ID,
-                    false
-                  ));
-                  this.mappedRaids.set(raid.en, prevArray);
-                }
-              }
-            }) 
-          })
-        }
-      ).catch((error) => {
+          this.sortSubscriber(newRaids);
+        });
+    } catch {
 
-      })
-    } catch (error) {
     }
   }
 
-  getSelectedRaid(raidEN: string) {
-    return this.mappedRaids.get(raidEN);
+  sortSubscriber(newRaids: RaidFromAPI[]) {
+    newRaids.forEach(raid => {
+      this.sortRaid(raid)
+    })
+  }
+
+  getSelectedRaid(raidEN: string): Observable<RaidCode[]> {
+    return new Observable<RaidCode[]>(observer => {
+      observer.next(this.mappedRaids.get(raidEN));
+    });
   }
 }

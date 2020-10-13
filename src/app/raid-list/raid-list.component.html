@@ -2,7 +2,7 @@
     <h1 class="raid-title">{{ raid.en }}</h1>
     <div class="code-container">
         <app-raid-element
-            *ngFor="let code of raidCodes"
+            *ngFor="let code of raidCodes | async"
             [element]="code"
         ></app-raid-element>  
     </div>
