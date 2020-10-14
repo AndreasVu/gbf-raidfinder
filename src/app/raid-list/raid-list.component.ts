@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Raid } from 'src/models/raid.model';
 import { RaidCode } from '../../models/raid-code.models';
 import { ApihandlerService } from '../apihandler.service';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-raid-list',
@@ -12,21 +13,22 @@ import { ApihandlerService } from '../apihandler.service';
 export class RaidListComponent implements OnInit, OnDestroy {
   @Input() raid: Raid;
   @Output() raidRemoved = new EventEmitter<Raid>();
-  raidCodes: Observable<RaidCode[]>;
-  raidIdCodes: Array<RaidCode>;
-  timerID: number;
+  raidCodes: RaidCode[];
+  subscription: Subscription;
 
-  constructor(private raidAPI: ApihandlerService) { }
+  constructor(private raidAPI: ApihandlerService, private logger: LoggerService) { }
 
   ngOnInit(): void {
-    this.timerID = setInterval(() => {
-      this.raidCodes = this.raidAPI.getSelectedRaid(this.raid.en);
-      this.raidCodes.subscribe(value => this.raidIdCodes = value);
-    }, 50)
+    this.subscription = this.raidAPI.getSelectedRaid(this.raid.en).subscribe(
+      (newRaids) => {
+      this.raidCodes = newRaids;
+    }, (error) => {
+      this.logger.error(error);
+    });
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.timerID);
+    this.subscription.unsubscribe();
   }
 
   onRemoved() {
@@ -34,8 +36,8 @@ export class RaidListComponent implements OnInit, OnDestroy {
   }
 
   onCopyCode() {
-    if (this.raidIdCodes[0] !=  null) {
-      return this.raidIdCodes[0].ID;
+    if (this.raidCodes !=  null) {
+      return this.raidCodes[0].ID;
     } else {
       return null;
     }

@@ -47,3 +47,4 @@ testem.log
 Thumbs.db
 
 server/settings.json
+server/log.txt

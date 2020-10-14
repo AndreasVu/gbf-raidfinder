@@ -4,6 +4,7 @@ import { RaidFromAPI } from '../models/raid-from-api.model';
 import raids from '../raid.json'
 import { RaidCode } from 'src/models/raid-code.models';
 import { Observable } from 'rxjs';
+import { LoggerService } from './logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,11 @@ export class ApihandlerService {
   api_url = 'http://localhost:3000/get_raids';
   mappedRaids = new Map<string, RaidCode[]>();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private logger: LoggerService) {
     let getTimerID = setInterval(() => this.getAndSortTweets(), 100);
   }
 
+  // Adds a new raid to the map
   addToMap(raid: RaidFromAPI, raidNameEN: string) {
     let raidMap = this.mappedRaids.get(raidNameEN);
     let newRaidCode = new RaidCode(raid.time, raid.ID, false);
@@ -45,8 +47,8 @@ export class ApihandlerService {
         (newRaids) => {
           this.sortSubscriber(newRaids);
         });
-    } catch {
-
+    } catch (error) {
+      this.logger.error(error);
     }
   }
 
@@ -56,9 +58,18 @@ export class ApihandlerService {
     })
   }
 
+  // Creates a new Observable for the selected raid.
   getSelectedRaid(raidEN: string): Observable<RaidCode[]> {
     return new Observable<RaidCode[]>(observer => {
-      observer.next(this.mappedRaids.get(raidEN));
+      let timerID = setInterval(() => {
+        observer.next(this.mappedRaids.get(raidEN));
+      }, 100);
+
+      return {
+        unsubscribe() {
+          clearInterval(timerID);
+        }
+      }
     });
   }
 }
