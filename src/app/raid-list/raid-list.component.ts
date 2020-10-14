@@ -1,3 +1,4 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Raid } from 'src/models/raid.model';
@@ -16,7 +17,11 @@ export class RaidListComponent implements OnInit, OnDestroy {
   raidCodes: RaidCode[];
   subscription: Subscription;
 
-  constructor(private raidAPI: ApihandlerService, private logger: LoggerService) { }
+  constructor(
+    private raidAPI: ApihandlerService, 
+    private logger: LoggerService,
+    private clipboard: Clipboard
+  ) { }
 
   ngOnInit(): void {
     this.subscription = this.raidAPI.getSelectedRaid(this.raid.en).subscribe(
@@ -37,9 +42,14 @@ export class RaidListComponent implements OnInit, OnDestroy {
 
   onCopyCode() {
     if (this.raidCodes !=  null) {
-      return this.raidCodes[0].ID;
-    } else {
-      return null;
+      for (let i = 0; i < this.raidCodes.length; i++) {
+        if (!this.raidCodes[i].isUsed) {
+          this.clipboard.copy(this.raidCodes[i].ID);
+          this.raidCodes[i].isUsed = true;
+          
+          break;
+        }
+      }
     }
   }
 

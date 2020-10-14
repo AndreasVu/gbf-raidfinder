@@ -1,3 +1,4 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { timer } from 'rxjs';
 import { RaidCode } from 'src/models/raid-code.models';
@@ -9,24 +10,25 @@ import { RaidCode } from 'src/models/raid-code.models';
 })
 export class RaidElementComponent implements OnInit, OnDestroy {
   @Input() element: RaidCode;
-  timeElapsed: number = 0;
+  timeElapsed: number;
   timerId: number;
 
-  constructor() { }
+  constructor(private clipboard: Clipboard) { }
 
   ngOnInit(): void {
-    this.timerId = setInterval(() => {this.timeElapsed += 1}, 1000);
+    let tweetTime = new Date(this.element.time)
+    this.timeElapsed = Math.floor((new Date().getTime() - tweetTime.getTime()) / 1000);
+    this.timerId = setInterval(() => {
+      this.timeElapsed = Math.floor((new Date().getTime() - tweetTime.getTime()) / 1000)
+    }, 1000);
   }
 
   ngOnDestroy(): void {
     clearInterval(this.timerId);
   }
 
-  isUsed(): string {
-    if (this.element.usedCode) {
-      return 'used';
-    } else {
-      return null;
-    }
+  onClick() {
+    this.clipboard.copy(this.element.ID);
+    this.element.isUsed = true;
   }
 }

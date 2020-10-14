@@ -6,7 +6,7 @@
             [element]="code"
         ></app-raid-element>  
     </div>
-    <div class="copy" matRipple [cdkCopyToClipboard]="onCopyCode()">
+    <div class="copy" matRipple (click)="onCopyCode()">
         <h2 class="button-text">
             Copy latest
         </h2>

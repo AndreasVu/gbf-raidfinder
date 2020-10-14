@@ -3,8 +3,10 @@ const Twitter = require('twit');
 const settings = require('./settings.json');
 const raids = require('./raid.json');
 const app = express();
+//const AnotherTwitter = require('node-tweet-stream');
 fs = require('fs');
 const apiClient = new Twitter(settings);
+//let newapiClient = new AnotherTwitter(settings);
 
 app.use(require('cors')());
 app.use(require('body-parser').json());
@@ -14,10 +16,11 @@ let allCodes = [];
 let timerID = setInterval(() => allCodes = [], 60000);
 // Creates a new streaming instance
 let stream = apiClient.stream('statuses/filter', {track: getKeywordString()});
+//let newStream = newapiClient.track(getKeywordString());
 
 
 // Adds tweets found to buffer if it is valid
-stream.on('tweet', function (tweet) {
+stream.on('tweet', (tweet) => {
     if (isValid(tweet)) {
         raidBuffer.push(crateNewRaidCode(tweet));
         if (raidBuffer.length > 1500) {
