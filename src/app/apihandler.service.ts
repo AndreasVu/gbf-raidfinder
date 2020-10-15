@@ -6,12 +6,13 @@ import { RaidCode } from 'src/models/raid-code.models';
 import { Observable } from 'rxjs';
 import { LoggerService } from './logger.service';
 import { newArray } from '@angular/compiler/src/util';
+import { environment } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApihandlerService {
-  api_url = 'http://localhost:3000';
+  api_url = environment.apiUrl;
   mappedRaids = new Map<string, RaidCode[]>();
 
   constructor(private http: HttpClient, private logger: LoggerService) {
