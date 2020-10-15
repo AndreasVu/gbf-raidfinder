@@ -5,57 +5,48 @@ import raids from '../raid.json'
 import { RaidCode } from 'src/models/raid-code.models';
 import { Observable } from 'rxjs';
 import { LoggerService } from './logger.service';
+import { newArray } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApihandlerService {
-  api_url = 'http://localhost:3000/get_raids';
+  api_url = 'http://localhost:3000';
   mappedRaids = new Map<string, RaidCode[]>();
 
   constructor(private http: HttpClient, private logger: LoggerService) {
-    let getTimerID = setInterval(() => this.getAndSortTweets(), 100);
+    let getTimerID = setInterval(() => {
+      this.http.get<any[]>(this.api_url + '/get_raids').subscribe((data) => {
+        this.updateMap(new Map(data));
+      });
+    }, 100);
   }
 
-  // Adds a new raid to the map
-  addToMap(raid: RaidFromAPI, raidNameEN: string) {
-    let raidMap = this.mappedRaids.get(raidNameEN);
-    let newRaidCode = new RaidCode(raid.time, raid.ID, false);
+  updateMap(newMap: Map<string, RaidCode[]>) {
+    newMap.forEach((value, key) => {
+      if (this.mappedRaids.get(key) != undefined) {
+        let newRaids = value;
+        let raidList = this.mappedRaids.get(key);
 
-    if (raidMap != null) {
-      if (raidMap.length >= 6) {
-        raidMap = raidMap.slice(0, 5);
-      } 
-      raidMap.unshift(newRaidCode);
-      this.mappedRaids.set(raidNameEN, raidMap);
-    } else {
-      this.mappedRaids.set(raidNameEN, [newRaidCode]);
-    }
-  }
+        newRaids.reverse().forEach(newRaid => {
+          let codes: string[] = [];
+          raidList.forEach(oldRaid => {
+            codes.push(oldRaid.ID);
+          })
 
-  sortRaid(raidToBeSorted: RaidFromAPI) {
-    raids.forEach(raid => {
-      if (raid.jp == raidToBeSorted.raidName || raid.en == raidToBeSorted.raidName) {
-        this.addToMap(raidToBeSorted, raid.en);
+          if (!codes.includes(newRaid.ID)) {
+            raidList.unshift(newRaid);
+          }
+        })
+        if (raidList.length > 6) {
+          raidList = raidList.slice(0, 6);
+        }
+
+        this.mappedRaids.set(key, raidList);
+      } else {
+        this.mappedRaids.set(key, value);
       }
-    })
-  }
-
-  getAndSortTweets() {
-    try {
-      this.http.get<RaidFromAPI[]>(this.api_url).subscribe(
-        (newRaids) => {
-          this.sortSubscriber(newRaids);
-        });
-    } catch (error) {
-      this.logger.error(error);
-    }
-  }
-
-  sortSubscriber(newRaids: RaidFromAPI[]) {
-    newRaids.forEach(raid => {
-      this.sortRaid(raid)
-    })
+    });
   }
 
   // Creates a new Observable for the selected raid.

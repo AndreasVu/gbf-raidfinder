@@ -52,5 +52,4 @@ export class RaidListComponent implements OnInit, OnDestroy {
       }
     }
   }
-
 }

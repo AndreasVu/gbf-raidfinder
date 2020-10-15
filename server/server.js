@@ -3,10 +3,8 @@ const Twitter = require('twit');
 const settings = require('./settings.json');
 const raids = require('./raid.json');
 const app = express();
-//const AnotherTwitter = require('node-tweet-stream');
-fs = require('fs');
+const fs = require('fs');
 const apiClient = new Twitter(settings);
-//let newapiClient = new AnotherTwitter(settings);
 
 app.use(require('cors')());
 app.use(require('body-parser').json());
@@ -14,20 +12,41 @@ app.use(require('body-parser').json());
 let raidBuffer = [];
 let allCodes = [];
 let timerID = setInterval(() => allCodes = [], 60000);
+let mappedRaids = new Map();
 // Creates a new streaming instance
 let stream = apiClient.stream('statuses/filter', {track: getKeywordString()});
-//let newStream = newapiClient.track(getKeywordString());
 
 
 // Adds tweets found to buffer if it is valid
 stream.on('tweet', (tweet) => {
     if (isValid(tweet)) {
-        raidBuffer.push(crateNewRaidCode(tweet));
-        if (raidBuffer.length > 1500) {
-            raidBuffer =  raidBuffer.slice(1000, raidBuffer.length);
-        }
+        raidBuffer.push(createNewRaidCode(tweet));
+        sortRaid(createNewRaidCode(tweet));
     }
 });
+
+function sortRaid(raidToBeSorted) {
+    raids.forEach(raid => {
+        if (raid.jp == raidToBeSorted.raidName || raid.en == raidToBeSorted.raidName) {
+          addToMap(raidToBeSorted, raid.en);
+        }
+      })
+}
+
+// Adds the raid to the map
+function addToMap(raidToBeAdded, raidNameEN) {
+    let raidMap = mappedRaids.get(raidNameEN);
+
+    if (raidMap != null) {
+      if (raidMap.length >= 6) {
+        raidMap = raidMap.slice(0, 5);
+      } 
+      raidMap.unshift(raidToBeAdded);
+      mappedRaids.set(raidNameEN, raidMap);
+    } else {
+      mappedRaids.set(raidNameEN, [raidToBeAdded]);
+    }
+}
 
 // Finds the raid ID from the tweet text
 function getRaidId(text) {
@@ -58,7 +77,7 @@ function getRaidName(text) {
 // * ID: The ID used to join the raid
 // * raidName: the name of the raid
 // * time: the date and time for when the tweet was postet
-function crateNewRaidCode(tweet) {
+function createNewRaidCode(tweet) {
     let tweetText = tweet.text
     return {
         ID: getRaidId(tweetText), 
@@ -67,7 +86,7 @@ function crateNewRaidCode(tweet) {
     }
 }
 
-
+// Checks if the code has already been added
 function isExisting(id) {
     if (allCodes.includes(id)) {
       return true
@@ -77,7 +96,7 @@ function isExisting(id) {
     }
 }
 
-// chekcs if the tweet is valid
+// chekcs if the tweet is valid and if the code has been added before
 function isValid(tweet) {
     if ( tweet.source !== '<a href="http://granbluefantasy.jp/" rel="nofollow">グランブルー ファンタジー</a>' ) {
         return false;
@@ -118,8 +137,8 @@ function logToFile(message) {
 // Endpoint used to get all the raids
 // Resets the buffer after use
 app.get("/get_raids", (req, res) => {
-    res.send(raidBuffer);
-    raidBuffer = [];
+    jsonString = JSON.stringify([...mappedRaids]);
+    res.send(jsonString);
 });
 
 app.post("/log", (req, res) => {

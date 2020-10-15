@@ -22,7 +22,9 @@ export class AddButtonComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.raidSelected.emit(result);
+      if (result) {
+        this.raidSelected.emit(result);
+      }
     });
   }
 }
