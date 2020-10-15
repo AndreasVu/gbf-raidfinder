@@ -25,10 +25,20 @@ export class AppComponent {
 
   onRaidAdded(addedRaid: AddRaidEntry) {
     let raidAdd = new Raid(addedRaid.en, addedRaid.jp);
-    if (!this.selectedRaids.includes(raidAdd)) {
+    if (this.selectedRaids.length) {
+      for (let r of this.selectedRaids) {
+        if (r.en.match(raidAdd.en)) {
+          continue;
+        }
+  
+        this.selectedRaids.push(raidAdd);
+  
+        localStorage.setItem('selectedRaids', JSON.stringify(this.selectedRaids));
+      }
+    } else {
       this.selectedRaids.push(raidAdd);
-
-      localStorage.setItem('selectedRaids', JSON.stringify(this.selectedRaids));
+  
+        localStorage.setItem('selectedRaids', JSON.stringify(this.selectedRaids));
     }
   }
 

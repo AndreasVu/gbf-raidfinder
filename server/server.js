@@ -1,16 +1,14 @@
 const express = require('express');
 const Twitter = require('twit');
-const settings = require('./settings.json');
 const raids = require('./raid.json');
 const app = express();
 const fs = require('fs');
-const keys = process.env.keys;
 const apiClient = new Twitter(
     {
         "consumer_key": process.env.consumer_key,
         "consumer_secret": process.env.consumer_secret,
         "access_token": process.env.access_token,
-        "access_token_secret": process.env.access_token_secret
+        "access_token_secret": process.env.access_token
     }
 );
 const PORT = process.env.PORT || 5000
@@ -21,6 +19,7 @@ app.use(require('body-parser').json());
 let raidBuffer = [];
 let allCodes = [];
 let timerID = setInterval(() => allCodes = [], 60000);
+let timerID2 = setInterval(() => mappedRaids = new Map(), 2 * 60000);
 let mappedRaids = new Map();
 // Creates a new streaming instance
 let stream = apiClient.stream('statuses/filter', {track: getKeywordString()});

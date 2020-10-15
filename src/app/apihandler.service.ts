@@ -20,7 +20,7 @@ export class ApihandlerService {
       this.http.get<any[]>(this.api_url + '/get_raids').subscribe((data) => {
         this.updateMap(new Map(data));
       });
-    }, 100);
+    }, 400);
   }
 
   updateMap(newMap: Map<string, RaidCode[]>) {
