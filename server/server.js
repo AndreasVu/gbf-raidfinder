@@ -4,7 +4,9 @@ const settings = require('./settings.json');
 const raids = require('./raid.json');
 const app = express();
 const fs = require('fs');
-const apiClient = new Twitter(settings);
+const keys = process.env.keys;
+const apiClient = new Twitter(keys);
+const PORT = process.env.PORT || 5000
 
 app.use(require('cors')());
 app.use(require('body-parser').json());
