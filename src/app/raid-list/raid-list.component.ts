@@ -1,5 +1,6 @@
 import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, Subscription } from 'rxjs';
 import { Raid } from 'src/models/raid.model';
 import { RaidCode } from '../../models/raid-code.models';
@@ -20,7 +21,8 @@ export class RaidListComponent implements OnInit, OnDestroy {
   constructor(
     private raidAPI: ApihandlerService, 
     private logger: LoggerService,
-    private clipboard: Clipboard
+    private clipboard: Clipboard,
+    private snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -43,13 +45,19 @@ export class RaidListComponent implements OnInit, OnDestroy {
   onCopyCode() {
     if (this.raidCodes !=  null) {
       for (let i = 0; i < this.raidCodes.length; i++) {
-        if (!this.raidCodes[i].isUsed) {
-          this.clipboard.copy(this.raidCodes[i].ID);
-          this.raidCodes[i].isUsed = true;
+        let code = this.raidCodes[i];
+        if (!code.isUsed) {
+          this.clipboard.copy(code.ID);
+          code.isUsed = true;
+          this.showSnackbar(code.ID);
           
           break;
         }
       }
     }
+  }
+
+  showSnackbar(id: string) {
+    this.snackbar.open('Copied code: ' + id, 'Dismiss', {duration: 1000});
   }
 }

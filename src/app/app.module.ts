@@ -13,6 +13,7 @@ import { AddRaidDialogComponent } from './add-button/add-raid-dialog/add-raid-di
 import { AppComponent } from './app.component';
 import { RaidElementComponent } from './raid-list/raid-element/raid-element.component';
 import { RaidListComponent } from './raid-list/raid-list.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -33,7 +34,8 @@ import { RaidListComponent } from './raid-list/raid-list.component';
     MatIconModule,
     MatRippleModule,
     ClipboardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   entryComponents: [
     RaidListComponent
