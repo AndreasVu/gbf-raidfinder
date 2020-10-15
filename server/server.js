@@ -5,7 +5,7 @@ const raids = require('./raid.json');
 const app = express();
 const fs = require('fs');
 const keys = process.env.keys;
-const apiClient = new Twitter(keys);
+const apiClient = new Twitter(settings);
 const PORT = process.env.PORT || 5000
 
 app.use(require('cors')());
