@@ -19,7 +19,6 @@ app.use(require('body-parser').json());
 let raidBuffer = [];
 let allCodes = [];
 let timerID = setInterval(() => allCodes = [], 60000);
-let timerID2 = setInterval(() => mappedRaids = new Map(), 2 * 60000);
 let mappedRaids = new Map();
 // Creates a new streaming instance
 let stream = apiClient.stream('statuses/filter', {track: getKeywordString()});
@@ -36,9 +35,9 @@ stream.on('tweet', (tweet) => {
 function sortRaid(raidToBeSorted) {
     raids.forEach(raid => {
         if (raid.jp == raidToBeSorted.raidName || raid.en == raidToBeSorted.raidName) {
-          addToMap(raidToBeSorted, raid.en);
+            addToMap(raidToBeSorted, raid.en);
         }
-      })
+    })
 }
 
 // Adds the raid to the map
@@ -106,7 +105,7 @@ function isExisting(id) {
 
 // chekcs if the tweet is valid and if the code has been added before
 function isValid(tweet) {
-    if ( tweet.source !== '<a href="http://granbluefantasy.jp/" rel="nofollow">グランブルー ファンタジー</a>' ) {
+    if (tweet.source !== '<a href="http://granbluefantasy.jp/" rel="nofollow">グランブルー ファンタジー</a>') {
         return false;
     } else {
         let tweetId = getRaidId(tweet.text);
