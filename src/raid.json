@@ -171,7 +171,7 @@
 		"en": "Lvl 150 Lucilius",
 		"jp": "Lv150 ルシファー",
 		"category": "Impossible",
-		"element": "Dark"
+		"element": "None"
 	},
 	{
 		"en": "Lvl 150 Phronesis",
@@ -218,37 +218,37 @@
 	{
 		"en": "Lvl 200 Wilnas",
 		"jp": "Lv200 ウィルナス",
-		"category": "Impossible",
+		"category": "6 Dragons",
 		"element": "Fire"
 	},
 	{
 		"en": "Lvl 200 Wamdus",
 		"jp": "Lv200 ワムデュス",
-		"category": "Impossible",
+		"category": "6 Dragons",
 		"element": "Water"
 	},
 	{
 		"en": "Lvl 200 Galleon",
 		"jp": "Lv200 ガレヲン",
-		"category": "Impossible",
+		"category": "6 Dragons",
 		"element": "Earth"
 	},
 	{
 		"en": "Lvl 200 Ewiyar",
 		"jp": "Lv200 イーウィヤ",
-		"category": "Impossible",
+		"category": "6 Dragons",
 		"element": "Wind"
 	},
 	{
 		"en": "Lvl 200 Lu Woh",
 		"jp": "Lv200 ル・オー",
-		"category": "Impossible",
+		"category": "6 Dragons",
 		"element": "Light"
 	},
 	{
 		"en": "Lvl 200 Fediel",
 		"jp": "Lv200 フェディエル",
-		"category": "Impossible",
+		"category": "6 Dragons",
 		"element": "Dark"
 	},
 	{
@@ -369,7 +369,7 @@
 		"en": "Lvl 250 Lucilius",
 		"jp": "Lv250 ルシファー",
 		"category": "Impossible",
-		"element": "Dark"
+		"element": "None"
 	},
 	{
 		"en": "Lvl 100 Shenxian",

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://blooming-eyrie-06462.herokuapp.com'
+  apiUrl: ''
 };
 
 /*

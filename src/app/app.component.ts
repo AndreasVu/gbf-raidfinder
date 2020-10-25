@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AddRaidEntry } from 'src/models/add-raid-entry.model';
 import { RaidCode } from 'src/models/raid-code.models';
 import { Raid } from '../models/raid.model'
@@ -8,13 +8,18 @@ import { Raid } from '../models/raid.model'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  selectedRaids: Raid[] = this.getRaidsFromLocalStorage();
+export class AppComponent implements OnInit{
+  selectedRaids: Raid[] = [];
   title = 'raidfinder';
 
   constructor() {
 
   }
+
+  ngOnInit() {
+    this.selectedRaids = this.getRaidsFromLocalStorage();
+  }
+  
 
   getRaidsFromLocalStorage(): Raid[] {
     let store = localStorage.getItem('selectedRaids');
@@ -25,36 +30,16 @@ export class AppComponent {
 
   onRaidAdded(addedRaid: AddRaidEntry) {
     let raidAdd = new Raid(addedRaid.en, addedRaid.jp);
-    if (this.selectedRaids.length) {
-      for (let r of this.selectedRaids) {
-        if (r.en.match(raidAdd.en)) {
-          continue;
-        }
-  
-        this.selectedRaids.push(raidAdd);
-  
-        localStorage.setItem('selectedRaids', JSON.stringify(this.selectedRaids));
-      }
-    } else {
+    let filteredRaidList = this.selectedRaids.filter((raid) => raid.en == raidAdd.en);
+
+    if (!filteredRaidList.length) {
       this.selectedRaids.push(raidAdd);
-  
-        localStorage.setItem('selectedRaids', JSON.stringify(this.selectedRaids));
+      localStorage.setItem('selectedRaids', JSON.stringify(this.selectedRaids));
     }
   }
 
   onRaidRemoved(raidToRemove: Raid) {
-    this.selectedRaids = this.selectedRaids.filter(obj => obj !== raidToRemove);
-    let oldArray = JSON.parse(localStorage.getItem('selectedRaids'));
-    let oldCode = oldArray.filter((raid: Raid) => raid.en == raidToRemove.en);
-    let index: number;
-
-    if (oldCode.length) {
-      index = oldArray.indexOf(oldCode[0]);
-
-      if (index > -1) {
-        oldArray.splice(index, 1);
-        localStorage.setItem('selectedRaids', JSON.stringify(oldArray));
-      }
-    }    
+    this.selectedRaids = this.selectedRaids.filter((raid) => raid.en != raidToRemove.en);
+    localStorage.setItem('selectedRaids', JSON.stringify(this.selectedRaids)); 
   }
 }

@@ -3,14 +3,13 @@ const Twitter = require('twit');
 const raids = require('./raid.json');
 const app = express();
 const fs = require('fs');
-const apiClient = new Twitter(
-    {
-        "consumer_key": process.env.consumer_key,
-        "consumer_secret": process.env.consumer_secret,
-        "access_token": process.env.access_token,
-        "access_token_secret": process.env.access_token_secret
-    }
-);
+const keys = {
+    "consumer_key":         process.env.consumer_key,
+    "consumer_secret":      process.env.consumer_secret,
+    "access_token":         process.env.access_token,
+    "access_token_secret":  process.env.access_token_secret
+}
+const apiClient = new Twitter(keys);
 const PORT = process.env.PORT || 5000
 
 app.use(require('cors')());
@@ -32,7 +31,7 @@ stream.on('tweet', (tweet) => {
     }
 });
 
-function sortRaid(raidToBeSorted) {
+async function sortRaid(raidToBeSorted) {
     raids.forEach(raid => {
         if (raid.jp == raidToBeSorted.raidName || raid.en == raidToBeSorted.raidName) {
             addToMap(raidToBeSorted, raid.en);
