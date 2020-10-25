@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RaidFromAPI } from '../models/raid-from-api.model';
-import raids from '../raid.json'
 import { RaidCode } from 'src/models/raid-code.models';
 import { Observable } from 'rxjs';
 import { LoggerService } from './logger.service';
-import { newArray } from '@angular/compiler/src/util';
 import { environment } from '../environments/environment.prod';
 
 @Injectable({
