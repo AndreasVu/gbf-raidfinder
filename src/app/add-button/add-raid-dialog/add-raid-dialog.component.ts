@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AddRaidEntry } from '../../../models/add-raid-entry.model'
 import raids from '../../../raid.json'
 import categories from '../../../categories.json'
@@ -8,6 +8,7 @@ import categories from '../../../categories.json'
   styleUrls: ['./add-raid-dialog.component.scss']
 })
 export class AddRaidDialogComponent implements OnInit {
+  @ViewChild('search', {static: false}) inputEl:ElementRef;
   selectedRaid: AddRaidEntry;
   raids = raids as AddRaidEntry[];
   categories = categories;
@@ -24,6 +25,8 @@ export class AddRaidDialogComponent implements OnInit {
       });
       this.raidMap.set(category, categoryRaids)
     });
+
+    setTimeout(() => this.inputEl.nativeElement.focus());
   }
 
   findRaids(searchTerm: string) {
