@@ -1,7 +1,12 @@
 li {
     font-size: medium;
-    margin: 10px;
+    margin: 5px;
     list-style-type: none;
+    display: inline-block;
+}
+
+.searchbar {
+    width: 100%
 }
 
 li > button {
@@ -10,19 +15,19 @@ li > button {
 }
 
 .Earth {
-    border-color: brown;
+    border-color: #b27636;
 }
 
 .Wind {
-    border-color: green;
+    border-color: #75d743;
 }
 
 .Water {
-    border-color: blue;
+    border-color: #4e90d8;
 }
 
 .Fire {
-    border-color: red;
+    border-color: #b52208;
 }
 
 .None {
@@ -30,9 +35,9 @@ li > button {
 }
 
 .Dark {
-    border-color: black;
+    border-color: #8e43ef;
 }
 
 .Light {
-    border-color: yellow;
+    border-color: #ddc239;
 }

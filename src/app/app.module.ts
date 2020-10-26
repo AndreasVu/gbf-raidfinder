@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { RaidElementComponent } from './raid-list/raid-element/raid-element.component';
 import { RaidListComponent } from './raid-list/raid-list.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -35,7 +36,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatRippleModule,
     ClipboardModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatInputModule,
   ],
   entryComponents: [
     RaidListComponent

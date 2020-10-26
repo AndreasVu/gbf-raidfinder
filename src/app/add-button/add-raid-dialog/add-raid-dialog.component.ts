@@ -12,6 +12,8 @@ export class AddRaidDialogComponent implements OnInit {
   raids = raids as AddRaidEntry[];
   categories = categories;
   raidMap = new Map;
+  searchString: string = "";
+  searchedRaidsList: AddRaidEntry[] = [];
 
   constructor() {}
 
@@ -22,5 +24,14 @@ export class AddRaidDialogComponent implements OnInit {
       });
       this.raidMap.set(category, categoryRaids)
     });
+  }
+
+  findRaids(searchTerm: string) {
+    if (searchTerm != "") {
+      this.searchedRaidsList = this.raids.filter((raid) => raid.en.toLowerCase().includes(searchTerm.toLowerCase()));
+    } else {
+      this.searchedRaidsList = [];
+    }
+    
   }
 }

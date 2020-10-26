@@ -1,5 +1,16 @@
 <h1 mat-dialog-title>Select raid</h1>
 <div mat-dialog-content>
+    <form>
+        <mat-form-field class="searchbar">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Ex. Avatar" [value]="searchString" (input)="findRaids($event.target.value)">
+        </mat-form-field>
+    </form>
+    <ul class="searchedRaids" *ngIf="searchedRaidsList != null">
+        <li *ngFor="let raid of searchedRaidsList">
+            <button mat-button [mat-dialog-close]="raid" class="{{raid.element}}">{{ raid.en }}</button>
+        </li>
+    </ul>
     <mat-accordion>
         <mat-expansion-panel *ngFor="let category of categories">
             <mat-expansion-panel-header>

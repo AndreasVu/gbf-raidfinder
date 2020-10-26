@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { AddRaidDialogComponent } from './add-raid-dialog/add-raid-dialog.component';
 import { AddRaidEntry } from '../../models/add-raid-entry.model'
 
@@ -10,6 +10,7 @@ import { AddRaidEntry } from '../../models/add-raid-entry.model'
 })
 export class AddButtonComponent implements OnInit {
   @Output() raidSelected = new EventEmitter<AddRaidEntry>();
+  dialogRef: MatDialogRef<AddRaidDialogComponent, any>
 
   constructor(public dialog: MatDialog) { }
 
@@ -17,14 +18,17 @@ export class AddButtonComponent implements OnInit {
   }
 
   openRaidList() {
-    let dialogRef = this.dialog.open(AddRaidDialogComponent, {
-      width: '600px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.raidSelected.emit(result);
-      }
-    });
+    if (this.dialogRef == null) {
+      this.dialogRef = this.dialog.open(AddRaidDialogComponent, {
+        width: '600px',
+      });
+  
+      this.dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.raidSelected.emit(result);
+        }
+        this.dialogRef = null;
+      });
+    }
   }
 }
