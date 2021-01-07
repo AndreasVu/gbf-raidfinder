@@ -2,8 +2,6 @@
 
 This is my attempt at creating a simple raidfinder for Granblue Fantasy using Angular and Node.js.
 
-This project is far from finished, and need a lot ot polishing and tweaks.
-
 ## Screenshots
 ![](https://i.imgur.com/ya0iFV7.png)
 ![](https://i.imgur.com/8aeJzwU.png)
