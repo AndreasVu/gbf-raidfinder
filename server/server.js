@@ -122,7 +122,7 @@ function isValid(tweet) {
   }
 
   let tweetId = getRaidId(tweet.text);
-  if (!codeExists(tweetId)) {
+  if (tweetId && !codeExists(tweetId)) {
     return true;
   }
 
