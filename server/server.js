@@ -146,8 +146,11 @@ function getKeywordString() {
 }
 
 function emitRaids() {
+  let message = {
+    message: [...mappedRaids],
+  };
   websocketServer.clients.forEach((client) => {
-    client.send(`{ "message": ${JSON.stringify([...mappedRaids])} }`);
+    client.send(JSON.stringify(message));
   });
 }
 

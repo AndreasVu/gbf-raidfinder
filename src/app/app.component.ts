@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddRaidEntry } from 'src/models/add-raid-entry.model';
 import { RaidCode } from 'src/models/raid-code.models';
 import { Raid } from '../models/raid.model'
+import { WsHandlerService } from './wshandler.service';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,13 @@ export class AppComponent implements OnInit{
   selectedRaids: Raid[] = [];
   title = 'raidfinder';
 
-  constructor() {
-
+  constructor(private readonly service: WsHandlerService) {
+    
   }
 
   ngOnInit() {
     this.selectedRaids = this.getRaidsFromLocalStorage();
+    this.service.connect();
   }
   
 
