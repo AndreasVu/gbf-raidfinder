@@ -514,5 +514,11 @@
 		"jp": "Lv100 バアル",
 		"category": "Tier 2",
 		"element": "Earth"
+	},
+	{
+		"en": "Lvl 150 Luminiera Malice",
+		"jp": "Lv150 シュヴァリエ・マリス",
+		"category": "Impossible",
+		"element": "Light"
 	}
 ]

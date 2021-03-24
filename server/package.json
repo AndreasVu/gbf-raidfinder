@@ -4,6 +4,7 @@
   "description": "server for fetching tweets from twitter",
   "main": "server.js",
   "scripts": {
+    "serve": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,6 +18,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "node-tweet-stream": "^2.0.3",
-    "twit": "^2.2.11"
+    "twit": "^2.2.11",
+    "ws": "^7.4.4"
   }
 }
