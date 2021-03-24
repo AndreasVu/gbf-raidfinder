@@ -20,7 +20,6 @@ app.use(require("body-parser").json());
 
 let raidBuffer = [];
 let allCodes = [];
-let timerID = setInterval(() => (allCodes = []), 60000);
 let mappedRaids = new Map();
 // Creates a new streaming instance
 let stream = apiClient.stream("statuses/filter", { track: getKeywordString() });
@@ -31,32 +30,33 @@ stream.on("tweet", (tweet) => {
     if (isValid(tweet)) {
       raidBuffer.push(createNewRaidCode(tweet));
       sortRaid(createNewRaidCode(tweet));
-      emittRaids();
+      emitRaids();
     }
   } catch (e) {
     console.log(e);
   }
 });
 
-async function sortRaid(raidToBeSorted) {
-  raids.forEach((raid) => {
-    if (
-      raid.jp == raidToBeSorted.raidName ||
-      raid.en == raidToBeSorted.raidName
-    ) {
-      addToMap(raidToBeSorted, raid.en);
-    }
-  });
+function sortRaid(raidToBeSorted) {
+  const found = raids.find(
+    (raid) =>
+      raid.en === raidToBeSorted.raidName || raid.jp === raidToBeSorted.raidName
+  );
+
+  if (found) {
+    addToMap(raidToBeSorted, found.en);
+  }
 }
 
 // Adds the raid to the map
 function addToMap(raidToBeAdded, raidNameEN) {
   let raidMap = mappedRaids.get(raidNameEN);
 
-  if (raidMap != null) {
+  if (raidMap) {
     if (raidMap.length >= 6) {
       raidMap = raidMap.slice(0, 5);
     }
+
     raidMap.unshift(raidToBeAdded);
     mappedRaids.set(raidNameEN, raidMap);
   } else {
@@ -142,7 +142,7 @@ function getKeywordString() {
   return keywords;
 }
 
-function emittRaids() {
+function emitRaids() {
   websocketServer.clients.forEach((client) => {
     client.send(`{ "message": ${JSON.stringify([...mappedRaids])} }`);
   });
