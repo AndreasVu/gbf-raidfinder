@@ -18,6 +18,7 @@ const PORT = process.env.PORT || 5000;
 app.use(require("cors")());
 app.use(require("body-parser").json());
 
+let timerID = setInterval(() => (allCodes = []), 60000);
 let raidBuffer = [];
 let allCodes = [];
 let mappedRaids = new Map();
