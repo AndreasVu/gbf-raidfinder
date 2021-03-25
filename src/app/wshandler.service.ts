@@ -1,6 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { RaidCode } from 'src/models/raid-code.models';
 import { Subject } from 'rxjs';
+import { retryWhen, tap, delay } from 'rxjs/operators';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 import { environment } from '../environments/environment.prod';
 import { wsResponse } from '../models/ws-response.model';
@@ -13,27 +14,34 @@ export class WsHandlerService implements OnDestroy {
   private WS_ENPOINT = environment.wsEndpoint;
   private mappedRaids = new Map<string, RaidCode[]>();
   private socket$: WebSocketSubject<any>;
-  private messagesSubject$ = new Subject<RaidList[]>();
   private raidSubjects = new Map<string, Subject<RaidCode[]>>();
-  public raids = this.messagesSubject$;
 
   private getNewWebSocket() {
     return webSocket(this.WS_ENPOINT);
   }
 
   public connect(): void {
+    console.log("connecting...");
     if (!this.socket$ || this.socket$.closed) {
       this.socket$ = this.getNewWebSocket();
-      this.socket$.subscribe(
+      this.socket$.pipe(
+        retryWhen(errors =>
+          errors.pipe(
+            tap(err => {
+              console.error('Got error', err);
+            }),
+            delay(3000)
+          )
+        )
+      ).subscribe(
         (msg: wsResponse) => {
           if (msg.message) {
-            this.messagesSubject$.next(msg.message);
             this.updateMap(msg.message);
             this.refreshCodes();
           }
         },
-        (err) => console.log(err), // Called if at any point WebSocket API signals some kind of error.
-        () => console.log('complete') // Called when connection is closed (for whatever reason).
+        (err) => console.log(err),
+        () => { console.log("Socket closed...");}
       );
     }
   }
