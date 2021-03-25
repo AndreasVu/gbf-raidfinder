@@ -34,7 +34,6 @@ export class RaidListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.raidAPI.getSelectedRaid(this.raid.en).subscribe(
       (newRaids) => {
-        console.log(newRaids);
         this.updateCodes(newRaids);
       },
       (error) => {
