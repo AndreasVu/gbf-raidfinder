@@ -45,9 +45,9 @@ export class RaidListComponent implements OnInit, OnDestroy {
   updateCodes(newRaids: RaidCode[]) {
     if (this.raidCodes) {
       this.raidCodes = newRaids.map(newCode => {
-        const foundUsed = this.raidCodes.find(c => c.ID == newCode.ID && c.isUsed);
-        if (foundUsed) {
-          return foundUsed;
+        const found = this.raidCodes.find(c => c.ID == newCode.ID);
+        if (found) {
+          return found;
         }
   
         return newCode;
