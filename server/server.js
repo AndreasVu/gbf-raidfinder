@@ -158,6 +158,10 @@ websocketServer.on("connection", (wsClient) => {
   wsClient.send('{"connection": "ok"}');
 });
 
+websocketServer.on("error", (error) => {
+  console.log(error);
+});
+
 server.listen(PORT, () =>
   console.log(`Websocket server running on port ${PORT}`)
 );
