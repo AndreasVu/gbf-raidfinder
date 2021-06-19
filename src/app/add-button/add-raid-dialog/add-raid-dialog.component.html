@@ -1,29 +1,36 @@
 <h1 mat-dialog-title>Select raid</h1>
 <div mat-dialog-content>
+
     <mat-form-field class="searchbar">
         <mat-label>Search</mat-label>
-        <input matInput placeholder="Ex. Avatar" autofocus [value]="searchString" (input)="findRaids($event.target.value)" #search>
+        <input matInput placeholder="Ex. Avatar" autofocus (input)="searchUpdate.next($event.target.value)" autocomplete="off" #search>
     </mat-form-field>
+
     <ul class="searchedRaids" *ngIf="searchedRaidsList != null">
         <li *ngFor="let raid of searchedRaidsList">
             <button mat-button [mat-dialog-close]="raid" class="{{raid.element}}">{{ raid.en }}</button>
         </li>
     </ul>
-    <mat-accordion>
+
+    <mat-accordion >
         <mat-expansion-panel *ngFor="let category of categories">
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     {{ category }}
                 </mat-panel-title>
             </mat-expansion-panel-header>
-            <ul>
-                <li *ngFor="let raid of raidMap.get(category)">
-                    <button mat-button [mat-dialog-close]="raid" class="{{raid.element}}">{{ raid.en }}</button>
-                </li>
-            </ul>
+
+            <ng-template matExpansionPanelContent>
+                <ul>
+                    <li *ngFor="let raid of raidMap.get(category)">
+                        <button mat-button [mat-dialog-close]="raid" class="{{raid.element}}">{{ raid.en }}</button>
+                    </li>
+                </ul>
+            </ng-template>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
+
 <div mat-dialog-actions>
-  <button mat-button color="accent" mat-dialog-close>Close</button>
+    <button mat-button color="accent" mat-dialog-close>Close</button>
 </div>

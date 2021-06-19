@@ -1,7 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AddRaidEntry } from '../../../models/add-raid-entry.model'
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import raids from '../../../raid.json'
 import categories from '../../../categories.json'
+
 @Component({
   selector: 'app-add-raid-dialog',
   templateUrl: './add-raid-dialog.component.html',
@@ -9,14 +12,13 @@ import categories from '../../../categories.json'
 })
 export class AddRaidDialogComponent implements OnInit {
   @ViewChild('search', {static: false}) inputEl:ElementRef;
-  selectedRaid: AddRaidEntry;
   raids = raids as AddRaidEntry[];
   categories = categories;
   raidMap = new Map;
-  searchString: string = "";
   searchedRaidsList: AddRaidEntry[] = [];
+  searchUpdate = new Subject<string>();
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.categories.forEach((category) => {
@@ -27,14 +29,15 @@ export class AddRaidDialogComponent implements OnInit {
     });
 
     setTimeout(() => this.inputEl.nativeElement.focus());
-  }
 
-  findRaids(searchTerm: string) {
-    if (searchTerm != "") {
-      this.searchedRaidsList = this.raids.filter((raid) => raid.en.toLowerCase().includes(searchTerm.toLowerCase()));
-    } else {
-      this.searchedRaidsList = [];
-    }
-    
+    this.searchUpdate.pipe(
+      debounceTime(200),
+      distinctUntilChanged()).subscribe(searchTerm => {
+        if (searchTerm != "") {
+          this.searchedRaidsList = this.raids.filter((raid) => raid.en.toLowerCase().includes(searchTerm.toLowerCase()));
+        } else {
+          this.searchedRaidsList = [];
+        }
+      })
   }
 }
