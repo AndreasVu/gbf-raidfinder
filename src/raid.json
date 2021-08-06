@@ -526,5 +526,11 @@
 		"jp": "Lv150 シュヴァリエ・マリス",
 		"category": "Impossible",
 		"element": "Light"
+	},
+  {
+		"en": "Lvl 150 Anima-Animus Core",
+		"jp": "Lv150 アニマ・アニムス・コア",
+		"category": "Impossible",
+		"element": "Dark"
 	}
 ]
