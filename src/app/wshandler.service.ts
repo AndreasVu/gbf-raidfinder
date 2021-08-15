@@ -4,8 +4,9 @@ import { Subject } from 'rxjs';
 import { retryWhen, tap, delay } from 'rxjs/operators';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 import { environment } from '../environments/environment.prod';
-import { wsResponse } from '../models/ws-response.model';
+import { ClientMesssage, wsResponse } from '../models/ws-response.model';
 import { RaidList } from '../models/raid-list.model';
+import { Raid } from 'src/models/raid.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,28 +22,36 @@ export class WsHandlerService implements OnDestroy {
   }
 
   public connect(): void {
-    console.log("connecting...");
+    console.log('connecting...');
     if (!this.socket$ || this.socket$.closed) {
       this.socket$ = this.getNewWebSocket();
-      this.socket$.pipe(
-        retryWhen(errors =>
-          errors.pipe(
-            tap(err => {
-              console.error('Got error', err);
-            }),
-            delay(3000)
+      this.socket$
+        .pipe(
+          retryWhen((errors) =>
+            errors.pipe(
+              tap((err) => {
+                console.error('Got error', err);
+              }),
+              delay(3000)
+            )
           )
         )
-      ).subscribe(
-        (msg: wsResponse) => {
-          if (msg.message) {
-            this.updateMap(msg.message);
-            this.refreshCodes();
+        .subscribe(
+          (msg: ClientMesssage) => {
+            switch (msg.action) {
+              case 'raidCodes':
+                this.updateMap(msg.raidCodes);
+                this.refreshCodes();
+                break;
+              default:
+                break;
+            }
+          },
+          (err) => console.log(err),
+          () => {
+            console.log('Socket closed...');
           }
-        },
-        (err) => console.log(err),
-        () => { console.log("Socket closed...");}
-      );
+        );
     }
   }
 
@@ -59,16 +68,36 @@ export class WsHandlerService implements OnDestroy {
     return newSub;
   }
 
+  followRaid(raidEN: string) {
+    this.socket$.next({
+      action: 'followRaids',
+      raids: [raidEN],
+    });
+  }
+
+  unfollowRaid(raidEN: string) {
+    this.socket$.next({
+      action: 'unFollowRaids',
+      raids: [raidEN],
+    });
+  }
+
   // Updates the raid list map
   updateMap(raids: RaidList[]) {
     raids.forEach((raid) => {
-      raid = new RaidList(raid[0], raid[1]);
-  
-      let codes = raid.codes.map((raidCode) => {
-        return new RaidCode(raidCode.time, raidCode.ID, false);
-      });
+      this.mappedRaids.set(
+        raid.raidName,
+        raid.codes.map((code) => {
+          return { ...code, isUsed: false };
+        })
+      );
+    });
+  }
 
-      this.mappedRaids.set(raid.raidName, codes);
+  subscribeToRaids(selectedRaids: Raid[]) {
+    this.socket$.next({
+      action: 'followRaids',
+      raids: selectedRaids.map((raid) => raid.en),
     });
   }
 
@@ -77,9 +106,9 @@ export class WsHandlerService implements OnDestroy {
     this.raidSubjects.forEach((subject, raidName) => {
       const raids = this.mappedRaids.get(raidName);
       if (raids) {
-        subject.next(raids)
+        subject.next(raids);
       }
-    })
+    });
   }
 
   // Closes the connection

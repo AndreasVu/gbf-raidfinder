@@ -1,7 +1,8 @@
-<div class="grid-container {{ element.isUsed }}" 
-matRipple
-(click)="onClick()"
->
-    <div class="time"><h3>{{ timeElapsed }}s</h3></div>
-    <div class="code"><h3>{{ element.ID }}</h3></div>
+<div class="grid-container {{ element.isUsed }}" matRipple (click)="onClick()">
+  <div class="time">
+    <h3>{{ timeElapsed }}s</h3>
+  </div>
+  <div class="code">
+    <h3>{{ element.id }}</h3>
+  </div>
 </div>

@@ -55,5 +55,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-server/settings.json
-server/log.txt
+.vscode/*
+server/.vscode/*

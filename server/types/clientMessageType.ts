@@ -1,7 +1,3 @@
-import { RaidList } from './raid-list.model';
-
-export interface wsResponse {}
-
 export type ClientMesssage =
   | {
       action: 'followRaids';
@@ -10,10 +6,6 @@ export type ClientMesssage =
   | {
       action: 'unFollowRaids';
       raids: string[];
-    }
-  | {
-      action: 'raidCodes';
-      raidCodes: RaidList[];
     }
   | {
       action: 'welcomeMessage';

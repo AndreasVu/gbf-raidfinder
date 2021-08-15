@@ -6,20 +6,24 @@ import { RaidCode } from 'src/models/raid-code.models';
 @Component({
   selector: 'app-raid-element',
   templateUrl: './raid-element.component.html',
-  styleUrls: ['./raid-element.component.scss']
+  styleUrls: ['./raid-element.component.scss'],
 })
 export class RaidElementComponent implements OnInit, OnDestroy {
   @Input() element: RaidCode;
   timeElapsed: number;
   timerId: number;
 
-  constructor(private clipboard: Clipboard) { }
+  constructor(private clipboard: Clipboard) {}
 
   ngOnInit(): void {
-    let tweetTime = new Date(this.element.time)
-    this.timeElapsed = Math.floor((new Date().getTime() - tweetTime.getTime()) / 1000);
+    let tweetTime = new Date(this.element.createdAt);
+    this.timeElapsed = Math.floor(
+      (new Date().getTime() - tweetTime.getTime()) / 1000
+    );
     this.timerId = setInterval(() => {
-      this.timeElapsed = Math.floor((new Date().getTime() - tweetTime.getTime()) / 1000)
+      this.timeElapsed = Math.floor(
+        (new Date().getTime() - tweetTime.getTime()) / 1000
+      );
     }, 1000);
   }
 
@@ -28,7 +32,7 @@ export class RaidElementComponent implements OnInit, OnDestroy {
   }
 
   onClick() {
-    this.clipboard.copy(this.element.ID);
+    this.clipboard.copy(this.element.id);
     this.element.isUsed = true;
   }
 }

@@ -8,8 +8,7 @@ import {
   Output,
 } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable, Subscription } from 'rxjs';
-import { RaidList } from 'src/models/raid-list.model';
+import { Subscription } from 'rxjs';
 import { Raid } from 'src/models/raid.model';
 import { RaidCode } from '../../models/raid-code.models';
 import { WsHandlerService } from '../wshandler.service';
@@ -44,14 +43,14 @@ export class RaidListComponent implements OnInit, OnDestroy {
 
   updateCodes(newRaids: RaidCode[]) {
     if (this.raidCodes) {
-      this.raidCodes = newRaids.map(newCode => {
-        const found = this.raidCodes.find(c => c.ID == newCode.ID);
+      this.raidCodes = newRaids.map((newCode) => {
+        const found = this.raidCodes.find((c) => c.id == newCode.id);
         if (found) {
           return found;
         }
-  
+
         return newCode;
-      })
+      });
     } else {
       this.raidCodes = newRaids;
     }
@@ -70,9 +69,9 @@ export class RaidListComponent implements OnInit, OnDestroy {
       for (let i = 0; i < this.raidCodes.length; i++) {
         let code = this.raidCodes[i];
         if (!code.isUsed) {
-          this.clipboard.copy(code.ID);
+          this.clipboard.copy(code.id);
           code.isUsed = true;
-          this.showSnackbar(code.ID);
+          this.showSnackbar(code.id);
 
           break;
         }

@@ -1,6 +1,4 @@
-export class Raid {
-    constructor(
-        public en: string,
-        public jp: string
-    ) {}
+export interface Raid {
+  en: string;
+  jp: string;
 }
